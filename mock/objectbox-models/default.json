@@ -1,0 +1,62 @@
+{
+  "_note1": "KEEP THIS FILE! Check it into a version control system (VCS) like git.",
+  "_note2": "ObjectBox manages crucial IDs for your object model. See docs for details.",
+  "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
+  "entities": [
+    {
+      "id": "1:5172460746068588172",
+      "lastPropertyId": "7:2117022169430270252",
+      "name": "MockData",
+      "properties": [
+        {
+          "id": "1:4608192635327466312",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:153341863991086719",
+          "name": "name",
+          "type": 9
+        },
+        {
+          "id": "3:7209374142107610572",
+          "name": "url",
+          "type": 9
+        },
+        {
+          "id": "4:7249608718808850372",
+          "name": "response",
+          "type": 9
+        },
+        {
+          "id": "5:6098400822754802889",
+          "name": "queryParams",
+          "type": 13
+        },
+        {
+          "id": "6:6795684655044324409",
+          "name": "formatParams",
+          "type": 13
+        },
+        {
+          "id": "7:2117022169430270252",
+          "name": "jsonParams",
+          "type": 13
+        }
+      ],
+      "relations": []
+    }
+  ],
+  "lastEntityId": "1:5172460746068588172",
+  "lastIndexId": "0:0",
+  "lastRelationId": "0:0",
+  "lastSequenceId": "0:0",
+  "modelVersion": 5,
+  "modelVersionParserMinimum": 5,
+  "retiredEntityUids": [],
+  "retiredIndexUids": [],
+  "retiredPropertyUids": [],
+  "retiredRelationUids": [],
+  "version": 1
+}
