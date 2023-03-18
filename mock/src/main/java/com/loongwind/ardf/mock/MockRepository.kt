@@ -9,7 +9,22 @@ internal class MockRepository(private val cacheRepository: CacheRepository) {
     }
 
     fun add(mockData: List<MockData>) {
-        mockList.addAll(mockData)
+        val oldData = mockData.filter {o ->
+            mockList.firstOrNull { n ->
+                o.uuid == n.uuid
+            } != null
+        }
+        val newData = mockData.toMutableList().apply {
+            removeAll(oldData)
+        }
+        mockList.forEach { o ->
+            oldData.firstOrNull { n ->
+                o.uuid == n.uuid
+            }?.let {
+                o.copyWithMock(it)
+            }
+        }
+        mockList.addAll(newData)
         cacheRepository.saveMockData(mockData)
     }
     fun add(mockData: MockData) {
@@ -43,6 +58,6 @@ internal class MockRepository(private val cacheRepository: CacheRepository) {
             it.url == url
         }
         //todo Match queryParams / formatParams / jsonBody
-        return  matchData?.response
+        return  matchData?.response?.decodeBase64()
     }
 }
