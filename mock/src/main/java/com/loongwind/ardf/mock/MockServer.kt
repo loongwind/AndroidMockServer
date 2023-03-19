@@ -11,6 +11,7 @@ class MockServer {
             private set
         internal var enableMock = true
         internal var enableCache = true
+        internal var mocking = false
 
         fun init(context: Context, enable: Boolean = true, enableCache: Boolean = true) {
             mockRepository = MockRepository(CacheRepository(context))

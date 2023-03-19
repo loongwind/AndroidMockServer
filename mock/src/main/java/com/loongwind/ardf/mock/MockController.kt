@@ -35,4 +35,14 @@ internal class MockController {
         val data = mockRepository.list()
         return MockServerResponse(data = data)
     }
+
+    @PostMapping("/status")
+    fun setMockStatus(@RequestParam("mocking") mocking : Boolean) : MockServerResponse<Boolean>{
+        MockServer.mocking = mocking
+        return MockServerResponse(data = true)
+    }
+    @GetMapping("/status/get")
+    fun getMockStatus() : MockServerResponse<Boolean>{
+        return MockServerResponse(data = MockServer.mocking)
+    }
 }

@@ -61,6 +61,9 @@ internal class MockRepository(private val cacheRepository: CacheRepository) {
         formatParams: Map<String, String>? = null,
         jsonBody: String? = null
     ) : String?{
+        if(!MockServer.mocking){
+            return null
+        }
         val matchData = mockList.firstOrNull {
             it.url == url
         }
