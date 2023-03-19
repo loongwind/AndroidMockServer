@@ -17,11 +17,15 @@ internal class CacheRepository(private val context: Context) {
 
 
     fun saveMockData(mockData : MockData){
-        mockDataBox.put(mockData)
+        if(MockServer.enableCache){
+            mockDataBox.put(mockData)
+        }
     }
 
     fun saveMockData(mockData : List<MockData>){
-        mockDataBox.put(mockData)
+        if(MockServer.enableCache){
+            mockDataBox.put(mockData)
+        }
     }
 
     fun removeMockData(mockData: MockData){
