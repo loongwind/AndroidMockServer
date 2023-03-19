@@ -39,6 +39,13 @@ internal class MockRepository(private val cacheRepository: CacheRepository) {
         cacheRepository.removeWithId(id)
     }
 
+    fun removeWithUuid(uuid: String) {
+        mockList.removeIf {
+            it.uuid == uuid
+        }
+        cacheRepository.removeWithUuid(uuid)
+    }
+
     fun clean() {
         mockList.clear()
         cacheRepository.clean()

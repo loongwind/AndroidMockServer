@@ -19,8 +19,8 @@ internal class MockController {
     }
 
     @PostMapping("/remove")
-    fun remove(@RequestParam("id") id: Long) : MockServerResponse<Boolean>{
-        mockRepository.remove(id)
+    fun remove(@RequestParam("uuid") uuid: String) : MockServerResponse<Boolean>{
+        mockRepository.removeWithUuid(uuid)
         return MockServerResponse(data = true)
     }
 

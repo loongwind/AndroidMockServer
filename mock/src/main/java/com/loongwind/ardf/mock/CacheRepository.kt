@@ -2,6 +2,7 @@ package com.loongwind.ardf.mock
 
 import android.content.Context
 import io.objectbox.BoxStore
+import io.objectbox.query.QueryBuilder
 
 internal class CacheRepository(private val context: Context) {
     private val store: BoxStore by lazy {
@@ -29,6 +30,15 @@ internal class CacheRepository(private val context: Context) {
     fun removeWithId(id: Long){
         try {
             mockDataBox.remove(id)
+        } catch (e : Exception) {
+            e.printStackTrace()
+        }
+    }
+    fun removeWithUuid(uuid: String){
+        try {
+            mockDataBox.query().equal(MockData_.uuid, uuid, QueryBuilder.StringOrder.CASE_SENSITIVE).build().findFirst()?.let {
+                mockDataBox.remove(it)
+            }
         } catch (e : Exception) {
             e.printStackTrace()
         }
