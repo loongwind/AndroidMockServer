@@ -5,7 +5,7 @@
   "entities": [
     {
       "id": "1:5172460746068588172",
-      "lastPropertyId": "8:7484772242772991053",
+      "lastPropertyId": "9:5900810909504530092",
       "name": "MockData",
       "properties": [
         {
@@ -47,14 +47,21 @@
         {
           "id": "8:7484772242772991053",
           "name": "uuid",
-          "type": 9
+          "indexId": "1:7787385794289289793",
+          "type": 9,
+          "flags": 2080
+        },
+        {
+          "id": "9:5900810909504530092",
+          "name": "enabled",
+          "type": 1
         }
       ],
       "relations": []
     }
   ],
   "lastEntityId": "1:5172460746068588172",
-  "lastIndexId": "0:0",
+  "lastIndexId": "1:7787385794289289793",
   "lastRelationId": "0:0",
   "lastSequenceId": "0:0",
   "modelVersion": 5,

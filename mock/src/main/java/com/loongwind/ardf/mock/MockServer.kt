@@ -16,6 +16,7 @@ class MockServer {
         fun init(context: Context, enable: Boolean = true, enableCache: Boolean = true) {
             mockRepository = MockRepository(CacheRepository(context))
             enableMock = enable
+            mocking = enableMock
             MockServer.enableCache = enableCache
 
             if (enable) {

@@ -25,7 +25,7 @@ internal class MockRepository(private val cacheRepository: CacheRepository) {
             }
         }
         mockList.addAll(newData)
-        cacheRepository.saveMockData(mockData)
+        cacheRepository.saveMockData(mockList)
     }
     fun add(mockData: MockData) {
         mockList.add(mockData)
@@ -67,7 +67,10 @@ internal class MockRepository(private val cacheRepository: CacheRepository) {
         val matchData = mockList.firstOrNull {
             it.url == url
         }
+        if(matchData?.enabled != true){
+            return null
+        }
         //todo Match queryParams / formatParams / jsonBody
-        return  matchData?.response?.decodeBase64()
+        return  matchData.response.decodeBase64()
     }
 }
