@@ -64,13 +64,12 @@ internal class MockRepository(private val cacheRepository: CacheRepository) {
         if(!MockServer.mocking){
             return null
         }
-        val matchData = mockList.firstOrNull {
+        val matchData = mockList.filter {
             it.url == url
-        }
-        if(matchData?.enabled != true){
-            return null
+        }.firstOrNull {
+            it.enabled
         }
         //todo Match queryParams / formatParams / jsonBody
-        return  matchData.response.decodeBase64()
+        return  matchData?.response?.decodeBase64()
     }
 }
