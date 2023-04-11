@@ -23,7 +23,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
-        MockServer.init(this)
+        com.loongwind.ardf.mock.BuildConfig.DEBUG
+        MockServer.init(this, enable = true, enableCache = false)
 
         val interceptor = HttpLoggingInterceptor()
         interceptor.level = HttpLoggingInterceptor.Level.BODY
