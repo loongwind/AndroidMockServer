@@ -1,6 +1,9 @@
 # AndroidMockServer
 
 一个用于 Android Mock API 请求数据的库
+
+最新版本： [![Maven Central](https://img.shields.io/maven-central/v/com.loongwind.ardf/mock)](https://mvnrepository.com/artifact/com.loongwind.ardf/mock)
+
 整体预览效果：
 
 ![mock.gif](images/0.gif)
