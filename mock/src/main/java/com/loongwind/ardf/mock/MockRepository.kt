@@ -33,22 +33,22 @@ internal class MockRepository(private val cacheRepository: CacheRepository) {
     }
 
     fun remove(id: Long) {
-        mockList.removeIf {
-            it.id == id
+        mockList.firstOrNull { it.id == id }?.let {
+            mockList.remove(it)
         }
         cacheRepository.removeWithId(id)
     }
 
     fun removeWithUuid(uuid: String) {
-        mockList.removeIf {
-            it.uuid == uuid
+        mockList.firstOrNull { it.uuid == uuid }?.let {
+            mockList.remove(it)
         }
         cacheRepository.removeWithUuid(uuid)
     }
 
     fun clean() {
         mockList.clear()
-        cacheRepository.clean()
+//        cacheRepository.clean()
     }
 
     fun list(): List<MockData> {
