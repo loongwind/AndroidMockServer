@@ -19,12 +19,12 @@
 > 目前 MockServer 只支持对 OKHttp 的请求进行数据模拟
 
 #### 添加依赖
-
+last_version: [![Maven Central](https://img.shields.io/maven-central/v/com.loongwind.ardf/mock)](https://mvnrepository.com/artifact/com.loongwind.ardf/mock)
 在 module 的 build.gradle 中添加 MockServer 依赖：
 
 ```groovy
 dependencies {
-	implementation 'com.loongwind.ardf:mock:1.0.0'
+	implementation 'com.loongwind.ardf:mock:$last_version'
 }
 ```
 
