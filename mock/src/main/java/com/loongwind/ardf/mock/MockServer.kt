@@ -13,7 +13,7 @@ class MockServer {
         internal var enableCache = false
         internal var mocking = false
 
-        fun init(context: Context, enable: Boolean = true, enableCache: Boolean = false) {
+        fun init(context: Context, port: Int = 8080, enable: Boolean = true, enableCache: Boolean = false) {
             mockRepository = MockRepository(CacheRepository(context))
             enableMock = enable
             mocking = enableMock
@@ -21,7 +21,7 @@ class MockServer {
 
             if (enable) {
                 val server: Server = AndServer.webServer(context)
-                    .port(8080)
+                    .port(port)
                     .timeout(10, TimeUnit.SECONDS)
                     .build()
                 server.startup()
